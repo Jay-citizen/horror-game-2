@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Untitled Horror Sandbox</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:system-ui,sans-serif;color:#ddd}
+canvas{display:block}
+#cross{position:fixed;left:50%;top:50%;width:18px;height:18px;margin:-9px;pointer-events:none}
+#cross:before,#cross:after{content:"";position:absolute;background:#fff;opacity:.8}
+#cross:before{left:8px;top:0;width:2px;height:18px}#cross:after{top:8px;left:0;height:2px;width:18px}
+#mine{position:fixed;left:50%;top:calc(50% + 28px);width:120px;height:6px;margin-left:-60px;background:#0008;display:none}
+#mine div{height:100%;width:0;background:#e8e8e8}
+#hotbar{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:4px}
+.slot{width:68px;height:50px;background:#000a;border:2px solid #fff3;text-align:center;font-size:12px;display:flex;flex-direction:column;justify-content:center;line-height:1.3}
+.slot.sel{border-color:#fffc;background:#fff4}
+.sw{display:block;width:14px;height:14px;margin:0 auto 2px;border:1px solid #0008}
+#help{position:fixed;top:8px;left:10px;font-size:12px;opacity:.6}
+#overlay{position:fixed;inset:0;background:#000c;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;text-align:center}
+#overlay h1{letter-spacing:.2em;font-weight:300}
+</style>
+</head>
+<body>
+<div id="cross"></div><div id="mine"><div></div></div><div id="hotbar"></div>
+<div id="help">WASD move · Shift sprint · Ctrl crouch · Space jump · LMB mine (hold) · RMB place · 1-9/wheel select · F flashlight · Esc release mouse</div>
+<div id="overlay"><h1>UNTITLED HORROR SANDBOX</h1><p>Click to play</p><p style="opacity:.5;font-size:13px">Edits are saved in this browser automatically.</p></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
